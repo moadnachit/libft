@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:29:53 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 11:38:12 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/08 18:19:14 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ft_len(char const *s, char c)
 	return (j);
 }
 
-char	**daym(char const *s, char **str, char c, size_t length)
+char	**ft_daym(char const *s, char **str, char c, size_t length)
 {
 	size_t	i;
 	size_t	start;
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 	str = (char **)malloc((length) * sizeof(char *));
 	if (!str)
 		return (0);
-	return (daym(s, str, c, length));
+	return (ft_daym(s, str, c, length));
 }
 /*int main ()
 {

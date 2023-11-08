@@ -6,13 +6,13 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:35:38 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/07 18:45:12 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/08 18:18:21 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 126)
 		return (c);

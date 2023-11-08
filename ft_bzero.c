@@ -6,13 +6,19 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:32:11 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/06 14:19:59 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/08 18:20:51 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
+}
+int main()
+{
+	char s[10] = "mouad nach";
+	 ft_bzero(s, 4);
+	printf("%s",s);
 }

@@ -6,13 +6,13 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:28:03 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/06 19:47:44 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/08 18:21:56 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	n_p;
 	int	r;
