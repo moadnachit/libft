@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:13:59 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:19:51 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:00:51 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (ft_strlen(needle) == 0)
+		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
 		j = 0;
-		while (needle[j] == haystack[i + j])
+		while (needle[j] == haystack[i + j] && j + i < len)
 		{
 			j++;
 			if (needle[j] == '\0')
@@ -31,11 +33,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*int main()
-{
-    char str[] = "moulad nachit";
-    char to_find[] = "ad";
-    char *ls = strnstr(str, to_find  , 5);
-    printf("%s\n" , ls);
-    return (0);
-}*/

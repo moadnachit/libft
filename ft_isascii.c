@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:35:38 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:18:21 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/11 09:44:26 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 126)
-		return (c);
-	else
-		return (0);
+	if (c >= 0 && c < 128)
+		return (1);
+	return (0);
 }

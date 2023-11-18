@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:01:39 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/07 20:00:40 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:01:11 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	str = malloc (len + 1);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	else if (ft_strlen(s + start) < len)
+		str = malloc(ft_strlen(s + start) + 1);
+	else
+		str = malloc(len + 1);
 	if (!str)
 		return (0);
-	while (i < len)
+	while (s[start] && i < len)
 	{
 		str[i] = s[start];
 		i++;
@@ -30,8 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-/*int main ()
-{
-    char s[] = "mouad nachit";
-    printf("%s", ft_substr(s, 4, 5));
-}*/

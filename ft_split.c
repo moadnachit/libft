@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:29:53 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:19:14 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:00:15 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_nachit(char const s, char c)
 {
-	if (s == c)
+	if ((char )s == c)
 		return (1);
 	else
 		return (0);
@@ -41,6 +41,18 @@ static int	ft_len(char const *s, char c)
 	return (j);
 }
 
+static char	**free_al(char **str, size_t i)
+{
+	i--;
+	while (str[i])
+	{
+		free(str[i]);
+		i--;
+	}
+	free(str);
+	return (NULL);
+}
+
 char	**ft_daym(char const *s, char **str, char c, size_t length)
 {
 	size_t	i;
@@ -58,9 +70,12 @@ char	**ft_daym(char const *s, char **str, char c, size_t length)
 		while (s[end] != c && s[end])
 			end++;
 		str[i] = ft_substr(s, start, end - start);
+		if (!str[i])
+			return (free_al(str, i));
 		i++;
 		start = end;
 	}
+	str[i] = NULL;
 	return (str);
 }
 
@@ -70,20 +85,8 @@ char	**ft_split(char const *s, char c)
 	size_t	length;
 
 	length = ft_len(s, c);
-	str = (char **)malloc((length) * sizeof(char *));
+	str = malloc((length + 1) * sizeof(char *));
 	if (!str)
 		return (0);
 	return (ft_daym(s, str, c, length));
 }
-/*int main ()
-{
-    char const s[] = "         it:      lss   m";
-    char c = ' ';
-    char **s1 = ft_split(s, c);
-    for(int i = 0; i < 6;i++){
-        printf("%s\n", s1[i]);
-        free(s1[i]); // Free each string in the array.
-    }
-    free(s1);
-}
-*/

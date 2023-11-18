@@ -6,13 +6,13 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:46:39 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:19:33 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:00:41 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	length;
 	size_t	i;
@@ -21,21 +21,14 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	while (src[length])
 		length++;
 	i = 0;
-	while (src[i] && i < dstsize - 1)
+	if (i < dstsize)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && i < dstsize - 1)
+		{
+			dst[i] = (char )src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (length);
 }
-/*int main() {
-    char dest[20];
-    const char *src = "Hello, World!";
-    size_t result = strlcpy(dest, src, sizeof(dest));
-
-    printf("Copied: %s\n", dest);
-    printf("Length of source: %zu\n", result);
-
-    return 0;
-}*/

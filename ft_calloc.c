@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:26:47 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:18:10 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/17 08:20:50 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*s;
+	void	*str;
+	size_t	i;
 
-	s = malloc(nmemb * size);
-	if (!s)
-		return (0);
-	ft_bzero(s, nmemb * size);
-	return (s);
+	i = -1;
+	if (size != 0 && nmemb > (i / size))
+		return (NULL);
+	str = malloc(nmemb * size);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, (size * nmemb));
+	return (str);
 }

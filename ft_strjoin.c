@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:30:36 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/07 19:39:01 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:00:34 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[j] = '\0';
 	return (str);
 }
-/*int main()
-{
-    char s[] = "abdrahman";
-    char l[] = "l3a";
-    printf("%s", ft_strjoin(s, l));
-}*/

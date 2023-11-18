@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:32:11 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:20:51 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/17 05:42:41 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,4 @@
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
-}
-int main()
-{
-	char s[10] = "mouad nach";
-	 ft_bzero(s, 4);
-	printf("%s",s);
 }

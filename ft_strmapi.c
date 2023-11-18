@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 08:31:53 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/07 19:48:00 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/18 16:10:56 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	str = malloc(strlen(s) + 1);
+	str = malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (0);
 	while (s[i])
@@ -29,16 +29,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*int main()
-{
-    char *s = "Hello, world!";
-    char *new_str = ft_strmapi(s, ft_toupper);
-
-    // Print the new string
-    printf("%s\n", new_str);
-
-    // Free the memory allocated to new_str
-    free(new_str);
-
-      return 0;
-}*/

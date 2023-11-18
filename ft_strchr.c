@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:32:02 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/08 18:19:20 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/16 20:00:19 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	*str;
+	size_t	i;
 
+	str = (char *)s;
 	i = 0;
-	while (s[i])
+	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
+		if (str[i] == (char )c)
+			return (str + i);
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
 	return (0);
 }
-/*int main() {
-    char s[] = "mouad nachit";
-    char c = 'it';
-    char* result = strchr(s, c);
-
-    if (result != 0) {
-        printf("Character '%c' found at position: %s\n", c, result);
-    } else {
-        printf("Character '%c' not found in the string.\n", c);
-    }
-
-    return 0;
-}*/

@@ -6,7 +6,7 @@
 #    By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 19:20:08 by mnachit           #+#    #+#              #
-#    Updated: 2023/11/08 17:57:50 by mnachit          ###   ########.fr        #
+#    Updated: 2023/11/17 06:03:00 by mnachit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,23 +49,32 @@ SRC = ft_isalpha.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
-%.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+BSRCS = ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		
+BOBJS = $(BSRCS:.c=.o)
+all : $(NAME)
 	
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
-all : 
-	$(NAME)
+bonus : $(NAME) $(BOBJS)
+	ar rc $(NAME) $(BOBJS)
+	
+clean:	
+	$(RM) $(OBJS) $(BOBJS)
 
-clean :
-	$(RM) $(OBJ)
-
-fclean : clean
+fclean:	clean
 	$(RM) $(NAME)
+re : fclean all
 
-re: fclean $(NAME)
-
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 
