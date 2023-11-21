@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 11:29:57 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/18 16:10:02 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:13:03 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		finish--;
 	str = malloc(finish - start + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (start < finish)
 		str[i++] = s1[start++];
 	str[i] = '\0';

@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:01:39 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/16 20:01:11 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 08:52:48 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		str = malloc(len + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (s[start] && i < len)
 	{
 		str[i] = s[start];

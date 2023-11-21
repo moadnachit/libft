@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:08:46 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/18 16:06:46 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 10:02:37 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-
 
 typedef struct s_list
 {

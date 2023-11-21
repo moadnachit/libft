@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:29:53 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/16 20:00:15 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:39:38 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,23 @@ static int	ft_len(char const *s, char c)
 	return (j);
 }
 
-static char	**free_al(char **str, size_t i)
+static char	**free_al(char **ptr, size_t i)
 {
-	i--;
-	while (str[i])
+	size_t	j;
+
+	j = 0;
+	while (j < i)
 	{
-		free(str[i]);
-		i--;
+		free(ptr[j]);
+		ptr[j] = NULL;
+		j++;
 	}
-	free(str);
+	free(ptr);
+	ptr = NULL;
 	return (NULL);
 }
 
-char	**ft_daym(char const *s, char **str, char c, size_t length)
+static char	**ft_daym(char const *s, char **str, char c, size_t length)
 {
 	size_t	i;
 	size_t	start;
@@ -84,9 +88,11 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	size_t	length;
 
+	if (!s)
+		return (NULL);
 	length = ft_len(s, c);
 	str = malloc((length + 1) * sizeof(char *));
 	if (!str)
-		return (0);
+		return (NULL);
 	return (ft_daym(s, str, c, length));
 }

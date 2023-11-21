@@ -6,13 +6,13 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:30:36 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/16 20:00:34 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 09:46:44 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(char *s1, char *s2)
+static int	ft_len(char *s1, char *s2)
 {
 	int	i;
 	int	j;
@@ -29,27 +29,28 @@ int	ft_len(char *s1, char *s2)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		length;
 	int		i;
 	int		j;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	j = ft_len((char *)s1, (char *)s2);
+	str = malloc(j + 1);
+	if (str == NULL)
+		return (NULL);
 	j = 0;
-	length = ft_len((char *)s1, (char *)s2);
-	str = malloc(length + 1);
 	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
-		j++;
 	}
-	i = 0;
-	while (s2[i])
+	while (s2[j])
 	{
-		str[j] = s2[i];
+		str[i] = s2[j];
 		i++;
 		j++;
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }

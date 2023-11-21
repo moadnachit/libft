@@ -6,7 +6,7 @@
 /*   By: mnachit <mnachit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:34:25 by mnachit           #+#    #+#             */
-/*   Updated: 2023/11/17 06:22:31 by mnachit          ###   ########.fr       */
+/*   Updated: 2023/11/19 17:55:37 by mnachit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	adst = (unsigned char *)dst;
 	asrc = (unsigned char *)src;
-	if (!dst && !src)
-		return (NULL);
+	if (dst == src)
+		return (dst);
 	while (n > i)
 	{
 		adst[i] = asrc[i];
